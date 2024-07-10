@@ -6,7 +6,12 @@ SECTIONS
     .text : { *(.text) }
     .data : { *(.data) }
     .rodata : { *(.rodata) }
-    .bss : { *(.bss) }
+    .bss (NOLOAD) : ALIGN(16) {
+        __bss_start = .;
+        *(.bss);
+        . = ALIGN(16);
+        __bss_end_exclusive = .;
+    }
 
     . = ALIGN(8);
     . = . + 0x4000;
