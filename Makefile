@@ -1,5 +1,5 @@
 all:
-	cargo xbuild --target=aarch64-unknown-none.json
+	cargo +nightly build -Z build-std=core,alloc --target aarch64-unknown-none.json
 
 launch:
 	qemu-system-aarch64 \
