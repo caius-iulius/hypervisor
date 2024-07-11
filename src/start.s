@@ -4,6 +4,9 @@
 .section ".text.boot"
 
 _start:
+	// Initialize DRAM.
+	ldr	x0, __bss_start
+	ldr x1, __bss_end_exclusive
 
 // Initialize bss section to zero
 .L_init_bss:

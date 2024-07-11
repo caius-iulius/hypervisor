@@ -16,13 +16,9 @@
   },
   "panic-strategy": "abort",
   "pre-link-args": {
-    "gnu": [
-      "--fix-cortex-a53-843419", "-Taarch64-qemu.ld"
-    ],
     "gnu-lld": [
       "--fix-cortex-a53-843419", "-Taarch64-qemu.ld"
-    ],
-    "ld.lld": ["-Taarch64-qemu.ld"]
+    ]
   },
   "relocation-model": "static",
   "stack-probes": {
